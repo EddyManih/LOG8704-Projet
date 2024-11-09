@@ -1616,6 +1616,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+--- !u!4 &591850008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 591849980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &596630506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -2412,6 +2417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346992549}
+  - component: {fileID: 1346992550}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2435,6 +2441,20 @@ Transform:
   - {fileID: 159000906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1346992550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346992548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427bc084bce1640459c7efcb1b25e855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 159000905}
+  head: {fileID: 591850008}
 --- !u!1 &1370373960
 GameObject:
   m_ObjectHideFlags: 0
