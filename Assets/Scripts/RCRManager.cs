@@ -28,15 +28,8 @@ public class RCRManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_LeftHandPoseActive && !m_RightHandPoseActive)
-        {
-            m_HandPlacementRCRValid = false;
-        }
-
-        if (m_isHandOnChest && (m_LeftHandPoseActive || m_RightHandPoseActive)) {
-            m_HandPlacementRCRValid = true;
-        }
-
+        m_HandPlacementRCRValid = m_isHandOnChest && (m_LeftHandPoseActive || m_RightHandPoseActive);
+        
         m_HandOnChestText.text = m_isHandOnChest ? "Hand on chest : True" : "Hand on chest : False";
         m_HandPlacementValidText.text = m_HandPlacementRCRValid ? "Hand placement: Valid": "Hand placement: Invalid";
     }
