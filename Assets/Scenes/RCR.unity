@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 646372958}
   - component: {fileID: 646372959}
   m_Layer: 0
-  m_Name: RCR Pose
+  m_Name: L_RCRHandGesture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 1329827916}
   - component: {fileID: 1329827917}
   m_Layer: 0
-  m_Name: RCR Pose
+  m_Name: R_RCRHandGesture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
