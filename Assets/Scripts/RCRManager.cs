@@ -4,8 +4,7 @@ using UnityEngine.XR.Hands.Samples.GestureSample;
 
 public class RCRManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text m_text;
-    [SerializeField] TMP_Text m_text2;
+    [SerializeField] TMP_Text m_PoseText, m_HandPlacementValidText, m_HandOnChestText;
     [SerializeField] StaticHandGesture m_leftHandGesture, m_rightHandGesture;
     [SerializeField] BoxCollider m_leftHandCollider, m_rightHandCollider;
     bool m_LeftHandPoseActive, m_RightHandPoseActive;
@@ -37,7 +36,9 @@ public class RCRManager : MonoBehaviour
         if (m_isHandOnChest && (m_LeftHandPoseActive || m_RightHandPoseActive)) {
             m_HandPlacementRCRValid = true;
         }
-        m_text2.text = m_isHandOnChest ? "Hand on chest : True" : "Hand on chest : False";
+
+        m_HandOnChestText.text = m_isHandOnChest ? "Hand on chest : True" : "Hand on chest : False";
+        m_HandPlacementValidText.text = m_HandPlacementRCRValid ? "Hand placement: Valid": "Hand placement: Invalid";
     }
 
     public void IsHandOnChest(bool isHandOnChest) {
@@ -50,12 +51,11 @@ public class RCRManager : MonoBehaviour
 
         if (m_LeftHandPoseActive) {
             ToggleHand(m_rightHandCollider, m_rightHandGesture, false);
-            m_text.text = "Left Hand Pose";
         } else {
             ToggleHand(m_rightHandCollider, m_rightHandGesture, true);
         }
 
-        m_text.text = m_LeftHandPoseActive ? "Left Hand Pose" : "ended";
+        m_PoseText.text = m_LeftHandPoseActive ? "Pose: Left Hand" : "Pose: None";
     }
 
     public void RightHandRCRGesture(bool poseActive)
@@ -67,8 +67,8 @@ public class RCRManager : MonoBehaviour
         } else {
             ToggleHand(m_leftHandCollider, m_leftHandGesture, true);
         }
-        
-        m_text.text = m_RightHandPoseActive ? "Right Hand Pose" : "ended";
+
+        m_PoseText.text = m_RightHandPoseActive ? "Pose: Right Hand" : "Pose: None";
     }
 
     private void ToggleHand(Collider handCollider, StaticHandGesture handGesture, bool handActive) {
