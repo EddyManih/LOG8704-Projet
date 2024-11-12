@@ -28,12 +28,12 @@ public class RCRManager : MonoBehaviour
     public void LeftHandRCRGesture(bool poseActive)
     {
         m_LeftHandPoseActive = poseActive;
-        m_text.text = m_LeftHandPoseActive ? "Left Hand Pose" : "";
+        m_text.text = m_LeftHandPoseActive ? "Left Hand Pose" : "ended";
     }
 
     public void RightHandRCRGesture(bool poseActive)
     {
         m_RightHandPoseActive = poseActive;
-        m_text.text = m_RightHandPoseActive ? "Right Hand Pose" : "";
+        m_text.text = m_RightHandPoseActive ? "Right Hand Pose" : "ended";
     }
 }
