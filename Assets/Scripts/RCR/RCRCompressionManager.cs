@@ -11,7 +11,7 @@ public class RCRCompressionManager : MonoBehaviour
 
     float m_timer;
     List<float> m_compressionTimes;
-    float m_compressionBPM;
+    int m_compressionBPM;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +21,7 @@ public class RCRCompressionManager : MonoBehaviour
 
         m_timer = 0.0f;
         m_compressionTimes = new List<float>();
-        m_compressionBPM = 0.0f;
+        m_compressionBPM = 0;
     }
 
     void Update() {
@@ -50,12 +50,12 @@ public class RCRCompressionManager : MonoBehaviour
         if (compressionStatus) {
             if (m_compressionTimes.Count == 2) {
                 // 2 compressions en timeDiff = x compressions en 60 secondes => x = 2*60 / timeDiff
-                m_compressionBPM = 180.0f / (m_compressionTimes[1] - m_compressionTimes[0]);
+                m_compressionBPM = (int) (180.0f / (m_compressionTimes[1] - m_compressionTimes[0]));
 
                 m_timer = 0;
                 m_compressionTimes.Clear();
 
-                m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString("D");
+                m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
             }
 
             m_compressionReachedValidDepth = false;
