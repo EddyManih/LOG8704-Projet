@@ -31,6 +31,10 @@ public class RCRManager : MonoBehaviour
         {
             m_HandPlacementRCRValid = false;
         }
+
+        if (m_isHandOnChest && (m_LeftHandPoseActive || m_RightHandPoseActive)) {
+            m_HandPlacementRCRValid = true;
+        }
     }
 
     public void IsHandOnChest(bool isHandOnChest) {
@@ -42,11 +46,10 @@ public class RCRManager : MonoBehaviour
         m_LeftHandPoseActive = poseActive;
 
         if (m_LeftHandPoseActive) {
-            m_rightHandGesture.enabled = false;
-            m_rightHandCollider.enabled = false;
+            ToggleHand(m_rightHandCollider, m_rightHandGesture, false);
+            m_text.text = "Left Hand Pose";
         } else {
-            m_rightHandGesture.enabled = true;
-            m_rightHandCollider.enabled = true;
+            ToggleHand(m_rightHandCollider, m_rightHandGesture, true);
         }
 
         m_text.text = m_LeftHandPoseActive ? "Left Hand Pose" : "ended";
@@ -55,6 +58,18 @@ public class RCRManager : MonoBehaviour
     public void RightHandRCRGesture(bool poseActive)
     {
         m_RightHandPoseActive = poseActive;
+        
+        if (m_RightHandPoseActive) {
+            ToggleHand(m_leftHandCollider, m_leftHandGesture, false);
+        } else {
+            ToggleHand(m_leftHandCollider, m_leftHandGesture, true);
+        }
+        
         m_text.text = m_RightHandPoseActive ? "Right Hand Pose" : "ended";
+    }
+
+    private void ToggleHand(Collider handCollider, StaticHandGesture handGesture, bool handActive) {
+        handCollider.enabled = handActive;
+        handGesture.enabled = handActive;
     }
 }
