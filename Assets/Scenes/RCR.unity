@@ -2735,7 +2735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290318029}
   - component: {fileID: 1290318030}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: L_PalmCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3669,10 +3669,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1440869319153460388, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646607330976802254, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_RCRCompressionManager
+      value: 
+      objectReference: {fileID: 1569024448}
+    - target: {fileID: 2414822305862719902, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_RCRCompressionManager
+      value: 
+      objectReference: {fileID: 1569024448}
     - target: {fileID: 4103104930297596756, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
       propertyPath: m_RCRManager
       value: 
       objectReference: {fileID: 1260632441}
+    - target: {fileID: 4257896811541333336, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_RCRCompressionManager
+      value: 
+      objectReference: {fileID: 1569024448}
+    - target: {fileID: 4451290046440750172, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924008781356833487, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5007069446593679164, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
       propertyPath: m_Name
       value: 0_a001_Talk
@@ -3756,7 +3780,7 @@ GameObject:
   - component: {fileID: 1886643382}
   m_Layer: 0
   m_Name: R_PalmCollider
-  m_TagString: Untagged
+  m_TagString: PalmCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
