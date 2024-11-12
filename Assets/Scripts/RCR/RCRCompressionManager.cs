@@ -49,8 +49,8 @@ public class RCRCompressionManager : MonoBehaviour
         // Nouvelle compression commencée
         if (compressionStatus) {
             if (m_compressionTimes.Count == 2) {
-                // 2 compressions en timeDiff = x compressions en 60 secondes => x = 2*60 / timeDiff
-                m_compressionBPM = (int) (180.0f / (m_compressionTimes[1] - m_compressionTimes[0]));
+                // 1 compression/deltaT s * 60s/min => compression/min
+                m_compressionBPM = (int) (60.0f / (m_compressionTimes[1] - m_compressionTimes[0]));
 
                 m_timer = 0;
                 m_compressionTimes.Clear();
