@@ -5,6 +5,7 @@ using UnityEngine.XR.Hands.Samples.GestureSample;
 public class RCRManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_text;
+    [SerializeField] TMP_Text m_text2;
     [SerializeField] StaticHandGesture m_leftHandGesture, m_rightHandGesture;
     [SerializeField] BoxCollider m_leftHandCollider, m_rightHandCollider;
     bool m_LeftHandPoseActive, m_RightHandPoseActive;
@@ -17,6 +18,7 @@ public class RCRManager : MonoBehaviour
         m_LeftHandPoseActive = false;
         m_RightHandPoseActive = false;
         m_HandPlacementRCRValid = false;
+        m_isHandOnChest = false;
 
         m_leftHandCollider.enabled = true;
         m_rightHandCollider.enabled = true;
@@ -35,6 +37,7 @@ public class RCRManager : MonoBehaviour
         if (m_isHandOnChest && (m_LeftHandPoseActive || m_RightHandPoseActive)) {
             m_HandPlacementRCRValid = true;
         }
+        m_text2.text = m_isHandOnChest ? "Hand on chest : True" : "Hand on chest : False";
     }
 
     public void IsHandOnChest(bool isHandOnChest) {
