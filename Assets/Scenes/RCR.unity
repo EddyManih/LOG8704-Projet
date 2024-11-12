@@ -2738,7 +2738,7 @@ GameObject:
   - component: {fileID: 1290318031}
   m_Layer: 4
   m_Name: L_PalmCollider
-  m_TagString: Untagged
+  m_TagString: PalmCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3497,8 +3497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1878af57919ed304fac39b424b4cd0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_compressionStatusText: {fileID: 0}
-  m_compressionBPMText: {fileID: 0}
+  m_compressionStatusText: {fileID: 59732327}
+  m_compressionBPMText: {fileID: 528171115}
 --- !u!1 &1718097006
 GameObject:
   m_ObjectHideFlags: 0
