@@ -27,15 +27,15 @@ public class RCRCompressionManager : MonoBehaviour
         if (!compressionStatus) {
             // Compression invalidée
             if (m_compressionTooDeep) {
-                m_compressionStatus.text = "Compression too deep!";
+                m_compressionStatus.text = "Comp: Deep!";
             } 
             // Compression valide
             else if (m_compressionReachedValidDepth) {
-                m_compressionStatus.text = "Good compression!";
+                m_compressionStatus.text = "Comp: Good!";
             }
             // Compression pas assez profonde
             else {
-                m_compressionStatus.text = "Compression too shallow";
+                m_compressionStatus.text = "Comp: Shallow!";
             }
         }
 
