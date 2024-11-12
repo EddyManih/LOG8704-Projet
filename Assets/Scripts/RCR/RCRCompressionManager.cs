@@ -13,7 +13,6 @@ public class RCRCompressionManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_compressionStarted = false;
         m_compressionReachedValidDepth = false;
         m_compressionTooDeep = false;
         m_timer = 0.0f;
