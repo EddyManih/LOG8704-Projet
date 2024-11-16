@@ -3764,6 +3764,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_compressionStatusText: {fileID: 59732327}
   m_compressionBPMText: {fileID: 528171115}
+  m_handTransform: {fileID: 1290318029}
+  m_chestTransform: {fileID: 1803664078}
+  m_maxChestOffset: 0.01
 --- !u!1 &1718097006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,6 +4101,11 @@ Transform:
 --- !u!4 &1803664077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5636113708877731206, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+  m_PrefabInstance: {fileID: 1803664075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1803664078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7583399309376352932, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
   m_PrefabInstance: {fileID: 1803664075}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1870526235
