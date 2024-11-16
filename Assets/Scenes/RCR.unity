@@ -118,6 +118,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20257719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5586499902932820292, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+  m_PrefabInstance: {fileID: 1803664075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59732325
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83824980}
   m_Layer: 0
-  m_Name: RCR Compression
+  m_Name: RCR Compression Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2870,6 +2875,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1259549392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8658918486967670302, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+  m_PrefabInstance: {fileID: 1803664075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260632439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2928,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_handPlacementValidText: {fileID: 2145198712}
   m_RCRStateText: {fileID: 1217265979}
+  m_stateGameObjects:
+  - m_stateGameObjects:
+    - {fileID: 2036724377}
+    - {fileID: 1410433882}
+    - {fileID: 20257719}
+  - m_stateGameObjects: []
+  - m_stateGameObjects:
+    - {fileID: 83824979}
+    - {fileID: 1569024446}
+    - {fileID: 1259549392}
 --- !u!1 &1290318028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,7 +4380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036724378}
   m_Layer: 0
-  m_Name: RCR Hand Placement
+  m_Name: RCR Hand Placement Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

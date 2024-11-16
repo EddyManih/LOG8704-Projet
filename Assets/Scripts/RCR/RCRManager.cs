@@ -1,4 +1,5 @@
 using TMPro;
+using System;
 using UnityEngine;
 
 
@@ -8,9 +9,16 @@ enum RCRState {
     Compressions = 2,
 }
 
+[System.Serializable]
+public class StateGameObjects
+{
+    public GameObject[] m_stateGameObjects;
+}
+
 public class RCRManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_handPlacementValidText, m_RCRStateText;
+    [SerializeField] StateGameObjects[] m_stateGameObjects;
     RCRState m_state;
 
     public static RCRManager Instance {get; private set;}
@@ -28,6 +36,10 @@ public class RCRManager : MonoBehaviour
     {
         m_state = RCRState.DetectHandPoseOnChest;
         m_RCRStateText.text = "State: DetectHandPoseOnChest";
+
+        foreach (RCRState state in Enum.GetValues(typeof(RCRState))) {
+            ToggleStateGameObjects(state, state.Equals(m_state));
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +49,7 @@ public class RCRManager : MonoBehaviour
             case RCRState.DetectHandPoseOnChest:
                 if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
                     m_handPlacementValidText.text = "Hand placement: Valid";
-                    SwitchState(RCRState.DetectHandsGesture, "DetectHandsGesture");
+                    SwitchState(RCRState.Compressions, "Compressions");
                     return;
                 }
                 m_handPlacementValidText.text = "Hand placement: Invalid";
@@ -53,8 +65,20 @@ public class RCRManager : MonoBehaviour
         m_handPlacementValidText.text = RCRGestureManager.Instance.HandPoseOnChestValid() ? "Hand placement: Valid": "Hand placement: Invalid";
     }
 
-    private void SwitchState(RCRState state, string DebugString = "") {
-        m_state = state;
+    private void ToggleStateGameObjects(RCRState state, bool isActive) {
+        GameObject[] stateGameObjects = m_stateGameObjects[(int) state].m_stateGameObjects;
+
+        for (int i = 0; i < stateGameObjects.Length; i++) {
+            stateGameObjects[i].SetActive(isActive);
+        }
+    }
+
+    private void SwitchState(RCRState newState, string DebugString = "") {
+        ToggleStateGameObjects(m_state, false);
+    
+        m_state = newState;
         m_RCRStateText.text = $"State: {DebugString}";
+    
+        ToggleStateGameObjects(m_state, true);
     }
 }
