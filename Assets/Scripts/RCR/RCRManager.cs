@@ -37,7 +37,8 @@ public class RCRManager : MonoBehaviour
         m_state = RCRState.DetectHandPoseOnChest;
         m_RCRStateText.text = "State: DetectHandPoseOnChest";
 
-        foreach (RCRState state in Enum.GetValues(typeof(RCRState))) {
+        for (int i = m_stateGameObjects.Length - 1; i >= 0; i--) {
+            RCRState state = (RCRState) i;
             ToggleStateGameObjects(state, state.Equals(m_state));
         }
     }
@@ -49,7 +50,7 @@ public class RCRManager : MonoBehaviour
             case RCRState.DetectHandPoseOnChest:
                 if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
                     m_handPlacementValidText.text = "Hand placement: Valid";
-                    SwitchState(RCRState.Compressions, "Compressions");
+                    SwitchState(RCRState.DetectHandsGesture, "DetectHandsGesture");
                     return;
                 }
                 m_handPlacementValidText.text = "Hand placement: Invalid";
