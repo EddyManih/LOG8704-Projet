@@ -8,8 +8,21 @@ public class RCRGestureManager : MonoBehaviour
     [SerializeField] StaticHandGesture m_leftHandGesture, m_rightHandGesture;
     [SerializeField] BoxCollider m_leftHandCollider, m_rightHandCollider;
 
-    private bool m_handPoseActive, m_handOnChest;
+
+    private bool m_handPoseActive, m_handOnChest, m_handOnHand;
     public static RCRGestureManager Instance {get; private set;}
+
+    public bool handOnChest {
+        get {
+            return m_handOnChest;
+        }
+    }
+
+    public bool handOnHand {
+        get {
+            return m_handOnHand;
+        }
+    }
 
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -24,6 +37,7 @@ public class RCRGestureManager : MonoBehaviour
     {
         m_handPoseActive = false;
         m_handOnChest = false;
+        m_handOnHand = false;
 
         m_leftHandCollider.enabled = true;
         m_rightHandCollider.enabled = true;
@@ -41,8 +55,16 @@ public class RCRGestureManager : MonoBehaviour
         return m_handPoseActive && m_handOnChest;
     }
 
+    public bool readyToStartCompressions() {
+        return m_handOnChest && m_handOnHand;
+    }
+
     public void DetectHandOnChest(bool handOnChestDetected) {
         m_handOnChest = handOnChestDetected;
+    }
+
+    public void DetectHandOnHand(bool handOnHandDetected) {
+        m_handOnHand = handOnHandDetected;
     }
 
     public void RCRHandPosePerformed(bool isLeftHand) {
