@@ -13,6 +13,16 @@ public class RCRCompressionManager : MonoBehaviour
     List<float> m_compressionTimes;
     int m_compressionBPM;
 
+    public static RCRCompressionManager Instance {get; private set;}
+
+    void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(this);
+        } else {
+            Instance = this;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
