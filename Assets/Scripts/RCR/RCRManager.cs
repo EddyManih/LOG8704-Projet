@@ -1,6 +1,14 @@
 using TMPro;
 using UnityEngine;
 
+
+enum RCRState {
+    DetectHandPose = 0,
+    DetectHandOnChest = 1,
+    DetectHandsGesture = 2,
+    Compressions = 3,
+}
+
 public class RCRManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_HandPlacementValidText;
