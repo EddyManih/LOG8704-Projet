@@ -3,16 +3,15 @@ using UnityEngine;
 
 
 enum RCRState {
-    DetectHandPose = 0,
-    DetectHandOnChest = 1,
-    DetectHandsGesture = 2,
-    Compressions = 3,
+    DetectHandPoseOnChest = 0,
+    DetectHandsGesture = 1,
+    Compressions = 2,
 }
 
 public class RCRManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text m_HandPlacementValidText;
-    bool m_HandPlacementRCRValid;
+    [SerializeField] TMP_Text m_handPlacementValidText, m_RCRStateText;
+    RCRState m_state;
 
     public static RCRManager Instance {get; private set;}
 
@@ -27,16 +26,35 @@ public class RCRManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_HandPlacementRCRValid = false;
+        m_state = RCRState.DetectHandPoseOnChest;
+        m_RCRStateText.text = "State: DetectHandPoseOnChest";
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_HandPlacementValidText.text = m_HandPlacementRCRValid ? "Hand placement: Valid": "Hand placement: Invalid";
+        switch(m_state) {
+            case RCRState.DetectHandPoseOnChest:
+                if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
+                    m_handPlacementValidText.text = "Hand placement: Valid";
+                    SwitchState(RCRState.DetectHandsGesture, "DetectHandsGesture");
+                    return;
+                }
+                m_handPlacementValidText.text = "Hand placement: Invalid";
+                break;
+
+            case RCRState.DetectHandsGesture:
+                break;
+
+            case RCRState.Compressions:
+                break;
+        }
+
+        m_handPlacementValidText.text = RCRGestureManager.Instance.HandPoseOnChestValid() ? "Hand placement: Valid": "Hand placement: Invalid";
     }
 
-    public void HandPlacementRCRValid(bool ValidPlacement) {
-        m_HandPlacementRCRValid = ValidPlacement;
+    private void SwitchState(RCRState state, string DebugString = "") {
+        m_state = state;
+        m_RCRStateText.text = $"State: {DebugString}";
     }
 }
