@@ -2222,8 +2222,8 @@ MonoBehaviour:
   m_GesturePerformed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260632441}
-        m_TargetAssemblyTypeName: RCRManager, Assembly-CSharp
+      - m_Target: {fileID: 1410433884}
+        m_TargetAssemblyTypeName: RCRGestureManager, Assembly-CSharp
         m_MethodName: LeftHandRCRGesture
         m_Mode: 6
         m_Arguments:
@@ -2237,8 +2237,8 @@ MonoBehaviour:
   m_GestureEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260632441}
-        m_TargetAssemblyTypeName: RCRManager, Assembly-CSharp
+      - m_Target: {fileID: 1410433884}
+        m_TargetAssemblyTypeName: RCRGestureManager, Assembly-CSharp
         m_MethodName: LeftHandRCRGesture
         m_Mode: 6
         m_Arguments:
@@ -2366,12 +2366,12 @@ Transform:
   m_GameObject: {fileID: 790586193}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 646372958}
-  m_Father: {fileID: 1260632440}
+  m_Father: {fileID: 1410433883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &790586195
 MonoBehaviour:
@@ -2718,8 +2718,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 790586194}
-  - {fileID: 1908914374}
+  - {fileID: 1410433883}
+  - {fileID: 1569024447}
   m_Father: {fileID: 1767791141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1260632441
@@ -2734,13 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a03beb2ec48f74792b2336e79ee2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PoseText: {fileID: 1174827546}
   m_HandPlacementValidText: {fileID: 2145198712}
-  m_HandOnChestText: {fileID: 88547559}
-  m_leftHandGesture: {fileID: 646372959}
-  m_rightHandGesture: {fileID: 1329827917}
-  m_leftHandCollider: {fileID: 1290318030}
-  m_rightHandCollider: {fileID: 1886643382}
 --- !u!1 &1290318028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2746,7 @@ GameObject:
   - component: {fileID: 1290318029}
   - component: {fileID: 1290318030}
   - component: {fileID: 1290318031}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: L_PalmCollider
   m_TagString: PalmCollider
   m_Icon: {fileID: 0}
@@ -2873,8 +2867,8 @@ MonoBehaviour:
   m_GesturePerformed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260632441}
-        m_TargetAssemblyTypeName: RCRManager, Assembly-CSharp
+      - m_Target: {fileID: 1410433884}
+        m_TargetAssemblyTypeName: RCRGestureManager, Assembly-CSharp
         m_MethodName: RightHandRCRGesture
         m_Mode: 6
         m_Arguments:
@@ -2888,8 +2882,8 @@ MonoBehaviour:
   m_GestureEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260632441}
-        m_TargetAssemblyTypeName: RCRManager, Assembly-CSharp
+      - m_Target: {fileID: 1410433884}
+        m_TargetAssemblyTypeName: RCRGestureManager, Assembly-CSharp
         m_MethodName: RightHandRCRGesture
         m_Mode: 6
         m_Arguments:
@@ -3079,6 +3073,58 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1410433882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410433883}
+  - component: {fileID: 1410433884}
+  m_Layer: 0
+  m_Name: RCRGestureManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410433883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410433882}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.36144, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 790586194}
+  - {fileID: 1908914374}
+  m_Father: {fileID: 1260632440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410433884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410433882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac64bbab6df2ba242b26d34358732445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PoseText: {fileID: 1174827546}
+  m_HandOnChestText: {fileID: 88547559}
+  m_leftHandGesture: {fileID: 646372959}
+  m_rightHandGesture: {fileID: 1329827917}
+  m_leftHandCollider: {fileID: 1290318030}
+  m_rightHandCollider: {fileID: 1886643382}
 --- !u!1 &1475688155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,12 +3540,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569024446}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.36144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1767791141}
+  m_Father: {fileID: 1260632440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1569024448
 MonoBehaviour:
@@ -3647,7 +3693,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1260632440}
-  - {fileID: 1569024447}
   m_Father: {fileID: 1481140347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800020377
@@ -3729,6 +3774,10 @@ PrefabInstance:
       propertyPath: m_RCRManager
       value: 
       objectReference: {fileID: 1260632441}
+    - target: {fileID: 4103104930297596756, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
+      propertyPath: m_RCRGestureManager
+      value: 
+      objectReference: {fileID: 1410433884}
     - target: {fileID: 4257896811541333336, guid: 2d45dabba7a8c4b818ae2dd6418f8c36, type: 3}
       propertyPath: m_RCRCompressionManager
       value: 
@@ -3919,12 +3968,12 @@ Transform:
   m_GameObject: {fileID: 1908914373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1329827916}
-  m_Father: {fileID: 1260632440}
+  m_Father: {fileID: 1410433883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1908914375
 MonoBehaviour:
