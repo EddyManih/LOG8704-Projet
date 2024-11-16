@@ -10,6 +10,16 @@ public class RCRGestureManager : MonoBehaviour
     bool m_LeftHandPoseActive, m_RightHandPoseActive;
     bool m_isHandOnChest;
 
+    public static RCRGestureManager Instance {get; private set;}
+
+    void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(this);
+        } else {
+            Instance = this;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
