@@ -8,9 +8,12 @@ enum RCRState {
 }
 
 enum AEDState {
-    AEDSnappedInSocket = 0,
+    DetectAEDInSocket = 0,
+    DetectPadsPlacement = 1,
+    AEDAnalysis = 2,
+    AdministerShock = 3,
+    End = 4,
 }
-
 
 [Serializable]
 public class StateGameObjects
