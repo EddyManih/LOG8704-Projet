@@ -3304,7 +3304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &826970866
 Transform:
   m_ObjectHideFlags: 0
@@ -4213,11 +4213,14 @@ MonoBehaviour:
     - {fileID: 2036724377}
     - {fileID: 1410433882}
     - {fileID: 20257719}
-  - m_stateGameObjects: []
+    - {fileID: 129286412}
+  - m_stateGameObjects:
+    - {fileID: 826970865}
   - m_stateGameObjects:
     - {fileID: 83824979}
     - {fileID: 1569024446}
     - {fileID: 1259549392}
+    - {fileID: 440883812}
 --- !u!1 &1290318028
 GameObject:
   m_ObjectHideFlags: 0
