@@ -3,6 +3,7 @@ using UnityEngine;
 public class AEDDeviceManager : MonoBehaviour
 {
     [SerializeField] SocketManager m_AEDSocket, m_leftPadSocket, m_rightPadSocket;
+    [SerializeField] GameObject m_leftPad, m_rightPad;
     bool m_applyingShock;
     
     public static AEDDeviceManager Instance {get; private set;}
@@ -13,6 +14,11 @@ public class AEDDeviceManager : MonoBehaviour
         } else {
             Instance = this;
         }
+    }
+
+    public void SetActivePads() {
+        m_leftPad.SetActive(true);
+        m_rightPad.SetActive(true);
     }
 
     public bool DeviceRetrieved() {

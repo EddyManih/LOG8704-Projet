@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketManager : MonoBehaviour
 {
+    [SerializeField] GameObject m_interactableGameObject;
     bool m_socketActive;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,10 +15,8 @@ public class SocketManager : MonoBehaviour
 
     public void SelectEntered() {
         m_socketActive = true;
-    }
-
-    public void SelectExited() {
-        m_socketActive = false;
+        m_interactableGameObject.GetComponent<XRGrabInteractable>().enabled = false;
+        GetComponent<XRSocketInteractor>().enabled = false;
     }
 
     public bool SocketActive() {

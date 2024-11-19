@@ -42,6 +42,7 @@ public class AEDManager : MonoBehaviour
             case AEDState.DetectAEDInSocket:
                 if (AEDDeviceManager.Instance.DeviceRetrieved()) {
                     SwitchState(AEDState.DetectPadsPlacement, "DetectPadsPlacement");
+                    AEDDeviceManager.Instance.SetActivePads();
                 }
                 break;
 
