@@ -3089,7 +3089,12 @@ MonoBehaviour:
   m_AEDStateText: {fileID: 1217265979}
   m_AEDPadsText: {fileID: 1219467179}
   m_AEDDeviceText: {fileID: 215204286}
-  m_stateGameObjects: []
+  m_stateGameObjects:
+  - m_stateGameObjects: []
+  - m_stateGameObjects: []
+  - m_stateGameObjects: []
+  - m_stateGameObjects: []
+  - m_stateGameObjects: []
 --- !u!1 &1290318028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,7 +3262,7 @@ Transform:
   m_GameObject: {fileID: 1350011252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.543, y: 1.308, z: 0.064}
+  m_LocalPosition: {x: 0.428, y: 0.075, z: 0.334}
   m_LocalScale: {x: 0.12585263, y: 0.3946, z: 0.27498445}
   m_ConstrainProportionsScale: 0
   m_Children:
