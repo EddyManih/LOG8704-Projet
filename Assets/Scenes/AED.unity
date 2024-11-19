@@ -2979,6 +2979,8 @@ MonoBehaviour:
   m_AEDSocket: {fileID: 1649021391}
   m_leftPadSocket: {fileID: 1365619207}
   m_rightPadSocket: {fileID: 2140645685}
+  m_leftPad: {fileID: 129252932}
+  m_rightPad: {fileID: 1887546264}
 --- !u!1 &1217265977
 GameObject:
   m_ObjectHideFlags: 0
