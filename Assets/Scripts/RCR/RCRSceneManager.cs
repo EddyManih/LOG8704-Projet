@@ -14,7 +14,7 @@ public class RCRSceneManager : MonoBehaviour
     void Update()
     {
         if (firstFrame) {
-            this.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 0.6f;
+            this.transform.position = new Vector3(head.position.x, this.transform.position.y, head.position.z) + new Vector3(head.forward.x, 0, head.forward.z).normalized * 0.6f;
             this.transform.LookAt(new Vector3(head.position.x, this.transform.position.y, head.position.z));
             this.transform.forward *= -1;
             this.transform.Rotate(0, 90 ,0);
