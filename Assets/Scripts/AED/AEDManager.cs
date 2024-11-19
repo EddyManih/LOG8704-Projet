@@ -76,6 +76,7 @@ public class AEDManager : MonoBehaviour
                 break;
 
             case AEDState.End:
+                m_AEDDeviceText.text = "Patient's heart is stable";
                 break;
         }
     }
