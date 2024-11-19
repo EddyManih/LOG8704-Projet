@@ -15,11 +15,16 @@ public class SocketManager : MonoBehaviour
 
     public void SelectEntered() {
         m_socketActive = true;
-        m_interactableGameObject.GetComponent<XRGrabInteractable>().enabled = false;
-        GetComponent<XRSocketInteractor>().enabled = false;
+        Invoke("DisableSocket", 0.5f);
     }
 
     public bool SocketActive() {
         return m_socketActive;
+    }
+
+    private void DisableSocket() {
+        m_interactableGameObject.GetComponent<XRGrabInteractable>().enabled = false;
+        m_interactableGameObject.GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<XRSocketInteractor>().enabled = false; 
     }
 }
