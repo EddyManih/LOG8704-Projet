@@ -1,19 +1,5 @@
 using TMPro;
-using System;
 using UnityEngine;
-
-
-enum RCRState {
-    DetectHandPoseOnChest = 0,
-    DetectHandsGesture = 1,
-    Compressions = 2,
-}
-
-[System.Serializable]
-public class StateGameObjects
-{
-    public GameObject[] m_stateGameObjects;
-}
 
 public class RCRManager : MonoBehaviour
 {
