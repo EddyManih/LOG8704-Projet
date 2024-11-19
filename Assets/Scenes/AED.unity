@@ -3416,6 +3416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd49b4d15748994d8bdccf49477d430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AEDStateText: {fileID: 0}
+  m_AEDPadsText: {fileID: 0}
+  m_AEDDeviceText: {fileID: 0}
+  m_stateGameObjects: []
 --- !u!1 &1290318028
 GameObject:
   m_ObjectHideFlags: 0
