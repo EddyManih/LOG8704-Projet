@@ -23,8 +23,8 @@ public class AEDManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_state = AEDState.DetectAEDInSocket;
-        m_AEDStateText.text = "State: DetectAEDInSocket";
+        m_state = AEDState.ContactEmergency;
+        m_AEDStateText.text = "State: ContactEmergency";
         m_nShocksAdministered = 0;
         m_AEDAnalysing = false;
 
@@ -38,6 +38,12 @@ public class AEDManager : MonoBehaviour
     void Update()
     {
         switch(m_state) {
+            case AEDState.ContactEmergency:
+                if (ContactEmergencyManager.Instance.ContactedEmergency()) {
+                    SwitchState(AEDState.DetectAEDInSocket, "DetectAEDInSocket");
+                }
+                break;
+
             case AEDState.DetectAEDInSocket:
                 if (AEDDeviceManager.Instance.DeviceRetrieved()) {
                     SwitchState(AEDState.DetectPadsPlacement, "DetectPadsPlacement");

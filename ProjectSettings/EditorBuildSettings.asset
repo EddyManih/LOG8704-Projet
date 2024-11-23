@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu AR.unity
     guid: 6db54025338c347d2ad6bc378cbf0fd4
+  - enabled: 0
+    path: Assets/Scenes/RCR + UI.unity
+    guid: 8dcc3f7a5f53a47dcba04c8191389cb3
   - enabled: 1
     path: Assets/Scenes/AED.unity
     guid: 5a901f3c927cc45fe9e5d8e3edea7596
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RCR.unity
     guid: 2b73eacec0078df42997b38865d59627
   m_configObjects:
