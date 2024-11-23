@@ -1648,11 +1648,6 @@ Transform:
   - {fileID: 20670738}
   m_Father: {fileID: 1493075369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &488403120 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4674055525783021057, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 591849980}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494901337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3289,11 @@ MonoBehaviour:
   m_TrackingChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &823065266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5512322065095414711, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 591849980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826970865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,7 +4215,7 @@ MonoBehaviour:
   m_RCRStateText: {fileID: 1217265979}
   m_stateGameObjects:
   - m_stateGameObjects:
-    - {fileID: 488403120}
+    - {fileID: 823065266}
   - m_stateGameObjects:
     - {fileID: 2036724377}
     - {fileID: 1410433882}
