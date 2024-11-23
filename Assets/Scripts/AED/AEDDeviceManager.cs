@@ -4,7 +4,7 @@ public class AEDDeviceManager : MonoBehaviour
 {
     [SerializeField] SocketManager m_AEDSocket, m_leftPadSocket, m_rightPadSocket;
     [SerializeField] GameObject m_leftPad, m_rightPad;
-    bool m_applyingShock;
+    bool m_applyingShock, m_deviceOn;
     
     public static AEDDeviceManager Instance {get; private set;}
 
@@ -23,6 +23,14 @@ public class AEDDeviceManager : MonoBehaviour
 
     public bool DeviceRetrieved() {
         return m_AEDSocket.SocketActive();
+    }
+
+    public void DeviceTurnedOn() {
+        m_deviceOn = true;
+    }
+
+    public bool DeviceIsOn() {
+        return m_deviceOn;
     }
 
     public bool PadPlaced(bool isLeft) {
