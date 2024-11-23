@@ -180,6 +180,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8171182367470112768, guid: 6dcd2a2cf09b51a47b1eaa38f510a576, type: 3}
   m_PrefabInstance: {fileID: 12939369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &12939371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2581622105092910074, guid: 6dcd2a2cf09b51a47b1eaa38f510a576, type: 3}
+  m_PrefabInstance: {fileID: 12939369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &175695684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1439,7 @@ MonoBehaviour:
   m_AEDDeviceText: {fileID: 2036883000}
   m_stateGameObjects:
   - m_stateGameObjects:
-    - {fileID: 0}
+    - {fileID: 12939371}
   - m_stateGameObjects: []
   - m_stateGameObjects: []
   - m_stateGameObjects: []
