@@ -36,8 +36,10 @@ public class ContactEmergencyManager : MonoBehaviour
     }
 
     public void PressDial() {
-        m_dialing = true;
-        Invoke("PressDialInvoke", 2.0f);
+        if (!m_dialing) {
+            m_dialing = true;
+            Invoke("PressDialInvoke", 1.0f);
+        }
     }
 
     public void EraseNumber() {
