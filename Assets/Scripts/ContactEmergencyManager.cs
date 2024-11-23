@@ -1,4 +1,3 @@
-using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,7 +41,7 @@ public class ContactEmergencyManager : MonoBehaviour
     }
 
     public void EraseNumber() {
-        if (!m_dialText.text.IsNullOrEmpty() && !m_dialing) {
+        if (!m_dialText.text.Equals("") && !m_dialing) {
             m_dialText.text = m_dialText.text[..^1];
         }
     }
