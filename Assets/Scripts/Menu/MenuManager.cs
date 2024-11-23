@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject mainMenu;
     public GameObject menu;
     public Transform head;
     private bool firstFrame = true;
@@ -40,12 +42,18 @@ public class MenuManager : MonoBehaviour
 
         if (options.IsPressed())
         {
-            Debug.Log("OPTIONS");
+            ToggleOptions();
         }
     }
 
     public void LoadScene(int sceneId)
     {
         SceneManager.LoadScene(sceneId);
+    }
+
+    public void ToggleOptions()
+    {
+        optionsMenu.SetActive(!optionsMenu.activeSelf);
+        mainMenu   .SetActive(!mainMenu   .activeSelf);
     }
 }
