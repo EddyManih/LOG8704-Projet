@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ContactEmergencyManager : MonoBehaviour
 {
     [SerializeField] Text m_dialText;
+    [SerializeField] AudioClip m_emergencyAudio, m_wrongNumberAudio;
+    AudioSource m_audioSource;
     bool m_contactedEmergency;
     bool m_dialing;
 
@@ -17,10 +20,11 @@ public class ContactEmergencyManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         m_dialText.text = "";
         m_contactedEmergency = false;
     }
@@ -38,7 +42,15 @@ public class ContactEmergencyManager : MonoBehaviour
     public void PressDial() {
         if (!m_dialing) {
             m_dialing = true;
-            Invoke("PressDialInvoke", 1.0f);
+            
+            if (m_dialText.text.Equals("911")) {
+                m_audioSource.clip = m_emergencyAudio;
+            } else {
+                m_audioSource.clip = m_wrongNumberAudio;
+            }
+
+            m_audioSource.Play(0);
+            StartCoroutine(WaitForAudio());
         }
     }
 
@@ -48,7 +60,13 @@ public class ContactEmergencyManager : MonoBehaviour
         }
     }
 
-    private void PressDialInvoke() {
+    private IEnumerator WaitForAudio()
+    {
+        while (m_audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
         if (m_dialText.text.Equals("911")) {
             m_contactedEmergency = true;
         }
