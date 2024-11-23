@@ -31,7 +31,7 @@ public class ContactEmergencyManager : MonoBehaviour
 
     public void PressNumber(string number) {
         if (!m_dialing) {
-            m_dialText.text += number;
+            m_dialText.text = $"{m_dialText.text}{number}";
         }
     }
 
