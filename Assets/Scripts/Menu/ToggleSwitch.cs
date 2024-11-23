@@ -14,6 +14,9 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
 
     [SerializeField, Range(0, 1f)] private float animationDuration = 0.5f;
     [SerializeField] private AnimationCurve slideEase = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private Image backgroundImage;
+    [SerializeField] private Color onColor;
+    [SerializeField] private Color offColor;
     private Coroutine _animateSliderCoroutine;
 
     protected void OnValidate()
@@ -81,6 +84,7 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
                 time += Time.deltaTime;
                 float lerpFactor = slideEase.Evaluate(time / animationDuration);
                 _slider.value = sliderValue = Mathf.Lerp(startValue, endValue, lerpFactor);
+                backgroundImage.color = Color.Lerp(offColor, onColor, sliderValue);
 
                 yield return null;
             }
