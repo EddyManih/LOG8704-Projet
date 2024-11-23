@@ -20,8 +20,8 @@ public class RCRManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_state = RCRState.DetectHandPoseOnChest;
-        m_RCRStateText.text = "State: DetectHandPoseOnChest";
+        m_state = RCRState.ContactEmergency;
+        m_RCRStateText.text = "State: ContactEmergency";
 
         for (int i = m_stateGameObjects.Length - 1; i >= 0; i--) {
             RCRState state = (RCRState) i;
@@ -33,6 +33,12 @@ public class RCRManager : MonoBehaviour
     void Update()
     {
         switch(m_state) {
+            case RCRState.ContactEmergency:
+                if (ContactEmergencyManager.Instance.ContactedEmergency()) {
+                    SwitchState(RCRState.DetectHandPoseOnChest, "DetectHandPoseOnChest");
+                }
+                break;
+
             case RCRState.DetectHandPoseOnChest:
                 if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
                     m_handPlacementValidText.text = "Hand placement: Valid";

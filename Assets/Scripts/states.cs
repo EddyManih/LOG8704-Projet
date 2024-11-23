@@ -2,9 +2,10 @@ using UnityEngine;
 using System;
 
 enum RCRState {
-    DetectHandPoseOnChest = 0,
-    DetectHandsGesture = 1,
-    Compressions = 2,
+    ContactEmergency = 0,
+    DetectHandPoseOnChest = 1,
+    DetectHandsGesture = 2,
+    Compressions = 3,
 }
 
 enum AEDState {
