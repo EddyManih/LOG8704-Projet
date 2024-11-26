@@ -9,7 +9,7 @@ public class RCRCompressionManager : MonoBehaviour
 
     bool m_compressionReachedValidDepth, m_compressionTooDeep, m_ongoingCompression;
 
-    float m_timer;
+    float m_timer, m_timerBetweenCompressions;
     List<float> m_compressionTimes;
     int m_compressionBPM;
     int m_nValidCompressions;
@@ -36,6 +36,7 @@ public class RCRCompressionManager : MonoBehaviour
         m_compressionTooDeep = false;
 
         m_timer = 0.0f;
+        m_timerBetweenCompressions = 0.0f;
         m_compressionTimes = new List<float>();
         m_compressionBPM = 0;
         m_nValidCompressions = 0;
@@ -47,6 +48,7 @@ public class RCRCompressionManager : MonoBehaviour
     void Update() {
         m_timer += Time.deltaTime;
 
+        HandleBPMCountReset();
         HandleChestMovement();
     }
 
@@ -119,5 +121,19 @@ public class RCRCompressionManager : MonoBehaviour
         }
 
         m_handVerticalPos = m_handTransform.position.y;
+    }
+
+    private void HandleBPMCountReset() {
+        if (!m_ongoingCompression) {
+            m_timerBetweenCompressions += Time.deltaTime;
+
+            if (m_timerBetweenCompressions > 4.0f) {
+                m_compressionTimes.Clear();
+                m_compressionBPM = 0;
+                m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
+            }
+        } else {
+            m_timerBetweenCompressions = 0.0f;
+        }
     }
 }
