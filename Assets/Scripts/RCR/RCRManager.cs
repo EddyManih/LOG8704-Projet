@@ -42,8 +42,8 @@ public class RCRManager : MonoBehaviour
             case RCRState.DetectHandPoseOnChest:
                 if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
                     m_handPlacementValidText.text = "Hand placement: Valid";
-                    //SwitchState(RCRState.Compressions, "Compressions");
-                    m_state = RCRState.DetectHandsGesture;
+                    SwitchState(RCRState.DetectHandsGesture, "DetectHandsGesture");
+                    //m_state = RCRState.DetectHandsGesture;
                 }
                 m_handPlacementValidText.text = "Hand placement: Invalid";
                 break;
