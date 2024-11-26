@@ -2938,32 +2938,33 @@ MonoBehaviour:
   m_stateGameObjects:
   - m_stateGameObjects:
     - {fileID: 823065266}
+    m_stateUiInstructions:
+    - {fileID: 129286412}
     m_stateAudioClip: {fileID: 0}
-    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1333190055}
-    m_stateAudioClip: {fileID: 0}
     m_stateUiInstructions: []
+    m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 2036724377}
     - {fileID: 1410433882}
     - {fileID: 20257719}
+    m_stateUiInstructions:
     - {fileID: 129286412}
     m_stateAudioClip: {fileID: 0}
-    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1410433882}
     - {fileID: 20257719}
+    m_stateUiInstructions:
     - {fileID: 826970865}
     m_stateAudioClip: {fileID: 0}
-    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 83824979}
     - {fileID: 1569024446}
     - {fileID: 1259549392}
+    m_stateUiInstructions:
     - {fileID: 440883812}
     m_stateAudioClip: {fileID: 0}
-    m_stateUiInstructions: []
   options: {fileID: 11400000, guid: c36c31486b11a524ba3c4479311b93a9, type: 2}
 --- !u!82 &1260632442
 AudioSource:
