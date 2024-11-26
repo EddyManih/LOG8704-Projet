@@ -14,7 +14,6 @@ public class SocketManager : MonoBehaviour
     }
 
     public void SelectEntered() {
-        m_socketActive = true;
         Invoke("DisableSocket", 0.5f);
     }
 
@@ -25,6 +24,7 @@ public class SocketManager : MonoBehaviour
     private void DisableSocket() {
         m_interactableGameObject.GetComponent<XRGrabInteractable>().enabled = false;
         m_interactableGameObject.GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<XRSocketInteractor>().enabled = false; 
+        GetComponent<XRSocketInteractor>().enabled = false;
+        m_socketActive = true;
     }
 }

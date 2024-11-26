@@ -1809,7 +1809,8 @@ MonoBehaviour:
     - {fileID: 12939371}
   - m_stateGameObjects:
     - {fileID: 1062795919}
-  - m_stateGameObjects: []
+  - m_stateGameObjects:
+    - {fileID: 1649021385}
   - m_stateGameObjects: []
   - m_stateGameObjects:
     - {fileID: 411597746}
