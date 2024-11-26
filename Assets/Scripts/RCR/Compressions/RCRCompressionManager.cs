@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class RCRCompressionManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text m_compressionStatusText, m_compressionBPMText;
+    [SerializeField] TMP_Text m_compressionStatusText, m_compressionBPMText, m_compressionNValidText;
 
     bool m_compressionReachedValidDepth, m_compressionTooDeep, m_ongoingCompression;
 
     float m_timer;
     List<float> m_compressionTimes;
     int m_compressionBPM;
+    int m_nValidCompressions;
 
     [SerializeField] Transform m_handTransform, m_chestTransform;
     [SerializeField] float m_maxChestOffset = 0.01f;
@@ -37,6 +38,7 @@ public class RCRCompressionManager : MonoBehaviour
         m_timer = 0.0f;
         m_compressionTimes = new List<float>();
         m_compressionBPM = 0;
+        m_nValidCompressions = 0;
         m_handVerticalPos = 0.0f;
         m_chestInitialPos = m_chestTransform.position;
 
@@ -61,6 +63,10 @@ public class RCRCompressionManager : MonoBehaviour
             // Compression valide
             else if (m_compressionReachedValidDepth) {
                 m_compressionStatusText.text = "Comp: Good!";
+                if (m_compressionBPM >= 100 && m_compressionBPM <= 130) {
+                    m_nValidCompressions++;
+                    m_compressionNValidText.text = "Valid: " + m_nValidCompressions.ToString();
+                }
             }
             // Compression pas assez profonde
             else {
@@ -85,6 +91,10 @@ public class RCRCompressionManager : MonoBehaviour
             m_compressionReachedValidDepth = false;
             m_compressionTooDeep = false;
         }
+    }
+
+    public int nValidCompressions() {
+        return m_nValidCompressions;
     }
 
     public void CompressionReachedValidDepth() {

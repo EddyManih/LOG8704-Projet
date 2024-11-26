@@ -49,7 +49,6 @@ public class RCRManager : MonoBehaviour
                 if (RCRGestureManager.Instance.HandPoseOnChestValid()) {
                     m_handPlacementValidText.text = "Hand placement: Valid";
                     SwitchState(RCRState.DetectHandsGesture, "DetectHandsGesture");
-                    //m_state = RCRState.DetectHandsGesture;
                 }
                 m_handPlacementValidText.text = "Hand placement: Invalid";
                 break;
@@ -67,6 +66,9 @@ public class RCRManager : MonoBehaviour
                 break;
 
             case RCRState.Compressions:
+            if (RCRCompressionManager.Instance.nValidCompressions() >= 10) {
+                SwitchState(RCRState.End, "End");
+            }
                 break;
         }
 

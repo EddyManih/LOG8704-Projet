@@ -7,6 +7,7 @@ enum RCRState {
     DetectHandPoseOnChest = 2,
     DetectHandsGesture = 3,
     Compressions = 4,
+    End = 5,
 }
 
 enum AEDState {
