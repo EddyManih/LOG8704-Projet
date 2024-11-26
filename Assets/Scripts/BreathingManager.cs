@@ -46,7 +46,7 @@ public class BreathingManager : MonoBehaviour
                 m_playSoundInterval++;
             }
 
-            if (m_timer > m_CheckBreathingTimerThreshold) {
+            if (m_timer > m_CheckBreathingTimerThreshold && !m_startedCoroutine) {
                 m_audioSource.clip = m_doubleBeepClip;
                 m_audioSource.Play(0);
                 m_startedCoroutine = true;
