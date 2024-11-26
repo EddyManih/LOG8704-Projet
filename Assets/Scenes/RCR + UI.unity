@@ -2895,6 +2895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260632440}
   - component: {fileID: 1260632441}
+  - component: {fileID: 1260632442}
   m_Layer: 0
   m_Name: RCRManager
   m_TagString: Untagged
@@ -2937,22 +2938,130 @@ MonoBehaviour:
   m_stateGameObjects:
   - m_stateGameObjects:
     - {fileID: 823065266}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1333190055}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 2036724377}
     - {fileID: 1410433882}
     - {fileID: 20257719}
     - {fileID: 129286412}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1410433882}
     - {fileID: 20257719}
     - {fileID: 826970865}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 83824979}
     - {fileID: 1569024446}
     - {fileID: 1259549392}
     - {fileID: 440883812}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
+  options: {fileID: 11400000, guid: c36c31486b11a524ba3c4479311b93a9, type: 2}
+--- !u!82 &1260632442
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260632439}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.75
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1290318029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4992266190875014254, guid: 6dcd2a2cf09b51a47b1eaa38f510a576, type: 3}
@@ -4474,7 +4583,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125248913}
-  - component: {fileID: 2125248914}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -4502,18 +4610,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2125248914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125248912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c637a6d801e0a4797c347367cb8128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2145198710
 GameObject:
   m_ObjectHideFlags: 0

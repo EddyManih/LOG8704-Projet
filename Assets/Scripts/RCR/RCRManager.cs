@@ -5,7 +5,9 @@ public class RCRManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_handPlacementValidText, m_RCRStateText;
     [SerializeField] StateGameObjects[] m_stateGameObjects;
+    [SerializeField] AidOptions options;
     RCRState m_state;
+    AudioSource m_audioSource;
 
     public static RCRManager Instance {get; private set;}
 
@@ -22,6 +24,7 @@ public class RCRManager : MonoBehaviour
     {
         m_state = RCRState.ContactEmergency;
         m_RCRStateText.text = "State: ContactEmergency";
+        m_audioSource = GetComponent<AudioSource>();
 
         for (int i = m_stateGameObjects.Length - 1; i >= 0; i--) {
             RCRState state = (RCRState) i;
@@ -80,6 +83,19 @@ public class RCRManager : MonoBehaviour
 
         for (int i = 0; i < stateGameObjects.Length; i++) {
             stateGameObjects[i].SetActive(isActive);
+        }
+
+        if (isActive && options.audioAids && m_stateGameObjects[(int) state].m_stateAudioClip != null) {
+            m_audioSource.clip = m_stateGameObjects[(int) state].m_stateAudioClip;
+            m_audioSource.Play(0);
+        }
+
+        if (isActive && options.visualAids) {
+            GameObject[] uiInstructions = m_stateGameObjects[(int) state].m_stateUiInstructions;
+
+            for (int i = 0; i < uiInstructions.Length; i++) {
+                uiInstructions[i].SetActive(isActive);
+            }
         }
     }
 

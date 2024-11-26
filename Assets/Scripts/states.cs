@@ -25,4 +25,6 @@ enum AEDState {
 public class StateGameObjects
 {
     public GameObject[] m_stateGameObjects;
+    public GameObject[] m_stateUiInstructions;
+    public AudioClip m_stateAudioClip;
 }

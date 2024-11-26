@@ -631,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 478080324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.59998214, z: 0.0000059604645}
+  m_LocalPosition: {x: 0, y: 0.5999822, z: 0.000005960465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1807,17 +1807,32 @@ MonoBehaviour:
   m_stateGameObjects:
   - m_stateGameObjects:
     - {fileID: 12939371}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1062795919}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1649021385}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects: []
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 411597746}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1844397406}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
   - m_stateGameObjects:
     - {fileID: 1783865065}
+    m_stateAudioClip: {fileID: 0}
+    m_stateUiInstructions: []
+  options: {fileID: 11400000, guid: c36c31486b11a524ba3c4479311b93a9, type: 2}
 --- !u!1 &1295445109
 GameObject:
   m_ObjectHideFlags: 0

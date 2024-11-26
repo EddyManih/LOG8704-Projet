@@ -5,7 +5,9 @@ public class AEDManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_AEDStateText, m_AEDPadsText, m_AEDDeviceText;
     [SerializeField] StateGameObjects[] m_stateGameObjects;
+    [SerializeField] AidOptions options;
     AEDState m_state;
+    AudioSource m_audioSource;
 
     public static AEDManager Instance {get; private set;}
 
@@ -23,6 +25,7 @@ public class AEDManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         m_state = AEDState.ContactEmergency;
         m_AEDStateText.text = "State: ContactEmergency";
         m_nShocksAdministered = 0;
@@ -115,6 +118,19 @@ public class AEDManager : MonoBehaviour
 
         for (int i = 0; i < stateGameObjects.Length; i++) {
             stateGameObjects[i].SetActive(isActive);
+        }
+
+        if (isActive && options.audioAids && m_stateGameObjects[(int) state].m_stateAudioClip != null) {
+            m_audioSource.clip = m_stateGameObjects[(int) state].m_stateAudioClip;
+            m_audioSource.Play(0);
+        }
+
+        if (isActive && options.visualAids) {
+            GameObject[] uiInstructions = m_stateGameObjects[(int) state].m_stateUiInstructions;
+
+            for (int i = 0; i < uiInstructions.Length; i++) {
+                uiInstructions[i].SetActive(isActive);
+            }
         }
     }
 
