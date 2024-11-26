@@ -23,6 +23,10 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
     {
         SetupToggleComponents();
 
+        if (visualAidSlider) sliderValue = options.visualAids ? 1.0f : 0.0f;
+        if (audioAidSlider) sliderValue = options.audioAids ? 1.0f : 0.0f;
+        if (sliderValue == 1.0f) backgroundImage.color = onColor;
+
         _slider.value = sliderValue;
     }
 
