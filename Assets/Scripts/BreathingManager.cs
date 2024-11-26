@@ -28,6 +28,7 @@ public class BreathingManager : MonoBehaviour
     void Update()
     {
         if (m_checkingAbdomen && m_checkingHead) {
+            Debug.Log(m_timer);
             m_timer += Time.deltaTime;
 
             if (m_timer > m_CheckBeathingTimerThreshold) {
@@ -44,10 +45,12 @@ public class BreathingManager : MonoBehaviour
     }
 
     public void CheckingAbdomen(bool status) {
+        Debug.Log("CheckingAbdomen" + status);
         m_checkingAbdomen = status;
     }
 
     public void CheckingHead(bool status) {
+        Debug.Log("CheckingHead" + status);
         m_checkingHead = status;
     }
 }

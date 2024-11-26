@@ -3,10 +3,10 @@ using UnityEngine;
 public class HeadBreathingCheck : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("MainCamera")) BreathingManager.Instance.CheckingHead(true);
+        if (other.CompareTag("HeadCollider")) BreathingManager.Instance.CheckingHead(true);
     }
 
     void OnTriggerExit(Collider other) {
-        if (other.CompareTag("MainCamera")) BreathingManager.Instance.CheckingHead(false);
+        if (other.CompareTag("HeadCollider")) BreathingManager.Instance.CheckingHead(false);
     }
 }

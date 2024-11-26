@@ -10,12 +10,13 @@ enum RCRState {
 
 enum AEDState {
     ContactEmergency = 0,
-    DetectAEDInSocket = 1,
-    PressAEDOnButton = 2,
-    DetectPadsPlacement = 3,
-    AEDAnalysis = 4,
-    AdministerShock = 5,
-    End = 6,
+    BreathingCheck = 1,
+    DetectAEDInSocket = 2,
+    PressAEDOnButton = 3,
+    DetectPadsPlacement = 4,
+    AEDAnalysis = 5,
+    AdministerShock = 6,
+    End = 7,
 }
 
 [Serializable]

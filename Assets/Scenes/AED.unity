@@ -631,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 478080324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.59998214, z: 0.0000059604645}
+  m_LocalPosition: {x: 0, y: 0.5999822, z: 0.000005960465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1190,6 +1190,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3016474, y: 4.144262, z: 2.2405977}
   m_Center: {x: -0.02814789, y: 0.49583703, z: -0.03089536}
+--- !u!1 &1062795919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062795920}
+  - component: {fileID: 1062795921}
+  m_Layer: 0
+  m_Name: BreathingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1062795920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062795919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767791141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062795921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062795919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f42d1b3c37f5f43a2fd12df6a40b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CheckBeathingTimerThreshold: 3
 --- !u!114 &1182653477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,6 +1706,8 @@ MonoBehaviour:
   m_stateGameObjects:
   - m_stateGameObjects:
     - {fileID: 12939371}
+  - m_stateGameObjects:
+    - {fileID: 1062795919}
   - m_stateGameObjects: []
   - m_stateGameObjects: []
   - m_stateGameObjects:
@@ -2609,6 +2656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1260632440}
+  - {fileID: 1062795920}
   m_Father: {fileID: 1481140347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771646413
