@@ -3,9 +3,10 @@ using System;
 
 enum RCRState {
     ContactEmergency = 0,
-    DetectHandPoseOnChest = 1,
-    DetectHandsGesture = 2,
-    Compressions = 3,
+    BreathingCheck = 1,
+    DetectHandPoseOnChest = 2,
+    DetectHandsGesture = 3,
+    Compressions = 4,
 }
 
 enum AEDState {

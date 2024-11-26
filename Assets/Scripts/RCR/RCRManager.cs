@@ -35,6 +35,12 @@ public class RCRManager : MonoBehaviour
         switch(m_state) {
             case RCRState.ContactEmergency:
                 if (ContactEmergencyManager.Instance.ContactedEmergency()) {
+                    SwitchState(RCRState.BreathingCheck, "BreathingCheck");
+                }
+                break;
+
+            case RCRState.BreathingCheck:
+                if (BreathingManager.Instance.CheckedBreathing()) {
                     SwitchState(RCRState.DetectHandPoseOnChest, "DetectHandPoseOnChest");
                 }
                 break;

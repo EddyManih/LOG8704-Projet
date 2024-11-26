@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BreathingManager : MonoBehaviour
 {
-    [SerializeField] float m_CheckBeathingTimerThreshold;
+    [SerializeField] float m_CheckBeathingTimerThreshold = 3.0f;
     bool m_checkedBreathing, m_checkingAbdomen, m_checkingHead; 
     float m_timer;
     public static BreathingManager Instance {get; private set;}
