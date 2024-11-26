@@ -80,22 +80,19 @@ public class RCRManager : MonoBehaviour
 
     private void ToggleStateGameObjects(RCRState state, bool isActive) {
         GameObject[] stateGameObjects = m_stateGameObjects[(int) state].m_stateGameObjects;
+        GameObject[] uiInstructions = m_stateGameObjects[(int) state].m_stateUiInstructions;
 
         for (int i = 0; i < stateGameObjects.Length; i++) {
             stateGameObjects[i].SetActive(isActive);
         }
 
+        for (int i = 0; i < uiInstructions.Length; i++) {
+            uiInstructions[i].SetActive(isActive && options.visualAids);
+        }
+
         if (isActive && options.audioAids && m_stateGameObjects[(int) state].m_stateAudioClip != null) {
             m_audioSource.clip = m_stateGameObjects[(int) state].m_stateAudioClip;
             m_audioSource.Play(0);
-        }
-
-        if (isActive && options.visualAids) {
-            GameObject[] uiInstructions = m_stateGameObjects[(int) state].m_stateUiInstructions;
-
-            for (int i = 0; i < uiInstructions.Length; i++) {
-                uiInstructions[i].SetActive(isActive);
-            }
         }
     }
 
