@@ -1238,6 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CheckBreathingTimerThreshold: 3
   m_beepClip: {fileID: 8300000, guid: 57faa263ff0df8944ae17d1573221e18, type: 3}
+  m_doubleBeepClip: {fileID: 8300000, guid: 5a5dc3998d07e224ba2f3a08ee0dcf17, type: 3}
 --- !u!82 &1062795922
 AudioSource:
   m_ObjectHideFlags: 0

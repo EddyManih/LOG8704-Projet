@@ -4,10 +4,10 @@ using System.Collections;
 public class BreathingManager : MonoBehaviour
 {
     [SerializeField] float m_CheckBreathingTimerThreshold = 3.0f;
-    [SerializeField] AudioClip m_beepClip;
+    [SerializeField] AudioClip m_beepClip, m_doubleBeepClip;
 
 
-    bool m_checkedBreathing, m_checkingAbdomen, m_checkingHead; 
+    bool m_checkedBreathing, m_checkingAbdomen, m_checkingHead, m_startedCoroutine; 
     float m_timer;
     float m_playSoundInterval;
     AudioSource m_audioSource;
@@ -30,6 +30,7 @@ public class BreathingManager : MonoBehaviour
         m_checkedBreathing = false;
         m_checkingAbdomen = false;
         m_checkingHead = false;
+        m_startedCoroutine = false;
         m_timer = 0.0f;
         m_playSoundInterval = 1.0f;
     }
@@ -46,13 +47,13 @@ public class BreathingManager : MonoBehaviour
             }
 
             if (m_timer > m_CheckBreathingTimerThreshold) {
-                m_audioSource.pitch = 0.90f;
-
+                m_audioSource.clip = m_doubleBeepClip;
                 m_audioSource.Play(0);
+                m_startedCoroutine = true;
                 StartCoroutine(WaitForAudio());
             }
         }
-        else {
+        else if (!m_startedCoroutine) {
             m_timer = 0.0f;
             m_playSoundInterval = 1.0f;
         }
