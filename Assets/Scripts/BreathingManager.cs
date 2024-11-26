@@ -46,14 +46,15 @@ public class BreathingManager : MonoBehaviour
             }
 
             if (m_timer > m_CheckBreathingTimerThreshold) {
-                m_audioSource.pitch = 0.5f;
-                m_audioSource.Play(0);
+                m_audioSource.pitch = 0.90f;
 
+                m_audioSource.Play(0);
                 StartCoroutine(WaitForAudio());
             }
         }
         else {
             m_timer = 0.0f;
+            m_playSoundInterval = 1.0f;
         }
     }
 
