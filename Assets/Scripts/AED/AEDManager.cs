@@ -39,7 +39,6 @@ public class AEDManager : MonoBehaviour
     {
         switch(m_state) {
             case AEDState.ContactEmergency:
-                SwitchState(AEDState.BreathingCheck, "BreathingCheck");
                 if (ContactEmergencyManager.Instance.ContactedEmergency()) {
                     SwitchState(AEDState.BreathingCheck, "BreathingCheck");
                 }
