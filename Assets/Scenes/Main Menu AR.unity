@@ -790,6 +790,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8171182367470112768, guid: 6dcd2a2cf09b51a47b1eaa38f510a576, type: 3}
   m_PrefabInstance: {fileID: 675275422}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &675275424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7400181097140685148, guid: 6dcd2a2cf09b51a47b1eaa38f510a576, type: 3}
+  m_PrefabInstance: {fileID: 675275422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804823099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1812,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 195081205}
   mainMenu: {fileID: 630257034}
   menu: {fileID: 159000905}
-  head: {fileID: 0}
+  head: {fileID: 675275424}
 --- !u!1 &1370373960
 GameObject:
   m_ObjectHideFlags: 0
