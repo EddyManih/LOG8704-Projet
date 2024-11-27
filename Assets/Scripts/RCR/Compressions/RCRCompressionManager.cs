@@ -60,19 +60,19 @@ public class RCRCompressionManager : MonoBehaviour
             m_compressionTimes.Add(m_timer);
             // Compression invalidée
             if (m_compressionTooDeep) {
-                m_compressionStatusText.text = "Comp: Deep!";
+                m_compressionStatusText.text = "Compression trop profonde!";
             } 
             // Compression valide
             else if (m_compressionReachedValidDepth) {
-                m_compressionStatusText.text = "Comp: Good!";
+                m_compressionStatusText.text = "Bonne profondeur!";
                 if (m_compressionBPM >= 100 && m_compressionBPM <= 130) {
                     m_nValidCompressions++;
-                    m_compressionNValidText.text = "Valid: " + m_nValidCompressions.ToString();
+                    m_compressionNValidText.text = "Compressions valides: " + m_nValidCompressions.ToString();
                 }
             }
             // Compression pas assez profonde
             else {
-                m_compressionStatusText.text = "Comp: Shallow!";
+                m_compressionStatusText.text = "Compression pas assez profonde!";
             }
         }
 
