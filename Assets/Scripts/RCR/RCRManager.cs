@@ -28,6 +28,7 @@ public class RCRManager : MonoBehaviour
 
         for (int i = m_stateGameObjects.Length - 1; i >= 0; i--) {
             RCRState state = (RCRState) i;
+            if (m_stateGameObjects[i].m_stepText && !m_state.Equals(state)) m_stateGameObjects[i].m_stepText.alpha = 0.15f;
             ToggleStateGameObjects(state, state.Equals(m_state));
         }
     }
@@ -99,6 +100,13 @@ public class RCRManager : MonoBehaviour
     private void SwitchState(RCRState newState, string DebugString = "") {
         ToggleStateGameObjects(m_state, false);
     
+        TextMeshProUGUI previousStateText = m_stateGameObjects[(int) m_state].m_stepText;
+        TextMeshProUGUI currentStateText = m_stateGameObjects[(int) newState].m_stepText;
+        if (previousStateText) {
+            previousStateText.alpha = 0.15f;
+            previousStateText.text = "<s>" + previousStateText.text;
+        }
+        if (currentStateText) currentStateText.alpha = 1;
         m_state = newState;
         m_RCRStateText.text = $"State: {DebugString}";
     
