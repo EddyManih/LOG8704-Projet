@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using TMPro;
 
 enum RCRState {
     ContactEmergency = 0,
@@ -26,5 +27,6 @@ public class StateGameObjects
 {
     public GameObject[] m_stateGameObjects;
     public GameObject[] m_stateUiInstructions;
+    public TextMeshProUGUI m_stepText;
     public AudioClip m_stateAudioClip;
 }

@@ -11,9 +11,6 @@ public class AEDManager : MonoBehaviour
 
     public static AEDManager Instance {get; private set;}
 
-    bool m_AEDAnalysing;
-    int m_nShocksAdministered;
-
     void Awake() {
         if (Instance != null && Instance != this) {
             Destroy(this);
@@ -28,11 +25,10 @@ public class AEDManager : MonoBehaviour
         m_audioSource = GetComponent<AudioSource>();
         m_state = AEDState.ContactEmergency;
         m_AEDStateText.text = "State: ContactEmergency";
-        m_nShocksAdministered = 0;
-        m_AEDAnalysing = false;
 
         for (int i = m_stateGameObjects.Length - 1; i >= 0; i--) {
             AEDState state = (AEDState) i;
+            if (m_stateGameObjects[i].m_stepText && !m_state.Equals(state)) m_stateGameObjects[i].m_stepText.alpha = 0.15f;
             ToggleStateGameObjects(state, state.Equals(m_state));
         }
     }
@@ -79,20 +75,13 @@ public class AEDManager : MonoBehaviour
                 break;
 
             case AEDState.AEDAnalysis:
-                if (m_nShocksAdministered < 3 && !m_AEDAnalysing) {
-                    m_AEDAnalysing = true;
-                    m_AEDDeviceText.text = "Analysing...";
-                    Invoke("AEDAnalysis", 3.0f);
-                }
-                else if (m_nShocksAdministered == 3) {
-                    SwitchState(AEDState.End, "End");
-                }
+                Invoke("AEDAnalysis", 3.0f);
                 break;
 
             case AEDState.AdministerShock:
                 if (AEDDeviceManager.Instance.ApplyingShock()) {
                     ApplyShock();
-                    SwitchState(AEDState.AEDAnalysis, "AEDAnalysis");
+                    SwitchState(AEDState.End, "End");
                 }
                 break;
 
@@ -103,13 +92,10 @@ public class AEDManager : MonoBehaviour
     }
 
     private void AEDAnalysis() {
-        m_AEDDeviceText.text = "Ready for Shock";
         SwitchState(AEDState.AdministerShock, "AdministerShock");
-        m_AEDAnalysing = false;
     }
 
     private void ApplyShock() {
-        m_nShocksAdministered++;
         AEDDeviceManager.Instance.ShockApplied();
     }
 
@@ -134,6 +120,13 @@ public class AEDManager : MonoBehaviour
     private void SwitchState(AEDState newState, string DebugString = "") {
         ToggleStateGameObjects(m_state, false);
     
+        TextMeshProUGUI previousStateText = m_stateGameObjects[(int) m_state].m_stepText;
+        TextMeshProUGUI currentStateText = m_stateGameObjects[(int) newState].m_stepText;
+        if (previousStateText) {
+            previousStateText.alpha = 0.15f;
+            previousStateText.text = "<s>" + previousStateText.text;
+        }
+        if (currentStateText) currentStateText.alpha = 1;
         m_state = newState;
         m_AEDStateText.text = $"State: {DebugString}";
     
