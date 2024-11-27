@@ -77,6 +77,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TelephoneMenu Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8834463134661419090, guid: 88ba243a87f220c4f813670a02810124, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8834463134661419091, guid: 88ba243a87f220c4f813670a02810124, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3813553
@@ -152,6 +156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8214829667028521582}
     m_Modifications:
+    - target: {fileID: 634548850137290413, guid: 02ef01222e0444fabace36fbc5157264, type: 3}
+      propertyPath: m_Name
+      value: Hand Menu Config
+      objectReference: {fileID: 0}
     - target: {fileID: 634548850137290413, guid: 02ef01222e0444fabace36fbc5157264, type: 3}
       propertyPath: m_IsActive
       value: 0
