@@ -4704,30 +4704,40 @@ MonoBehaviour:
   m_stateGameObjects:
   - m_stateGameObjects:
     - {fileID: 0}
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 1589310064}
     m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 1062795919}
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 2081068340}
     m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 1649021385}
-    m_stateUiInstructions: []
-    m_stateAudioClip: {fileID: 0}
-  - m_stateGameObjects: []
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 445939806}
     m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 411597746}
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 2123379367}
     m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 1844397406}
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 1986488807}
+    - {fileID: 2123379367}
     m_stateAudioClip: {fileID: 0}
   - m_stateGameObjects:
     - {fileID: 1783865065}
-    m_stateUiInstructions: []
+    m_stateUiInstructions:
+    - {fileID: 1986488807}
+    - {fileID: 2123379367}
+    m_stateAudioClip: {fileID: 0}
+  - m_stateGameObjects:
+    - {fileID: 1783865065}
+    m_stateUiInstructions:
+    - {fileID: 1641831296}
     m_stateAudioClip: {fileID: 0}
   options: {fileID: 11400000, guid: c36c31486b11a524ba3c4479311b93a9, type: 2}
 --- !u!1 &1263771504
