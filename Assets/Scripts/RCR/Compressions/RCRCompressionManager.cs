@@ -65,7 +65,7 @@ public class RCRCompressionManager : MonoBehaviour
             // Compression valide
             else if (m_compressionReachedValidDepth) {
                 m_compressionStatusText.text = "Bonne profondeur!";
-                if (m_compressionBPM >= 100 && m_compressionBPM <= 130) {
+                if (m_compressionBPM >= 100 && m_compressionBPM <= 120) {
                     m_nValidCompressions++;
                     m_compressionNValidText.text = "Compressions valides: " + m_nValidCompressions.ToString();
                 }
