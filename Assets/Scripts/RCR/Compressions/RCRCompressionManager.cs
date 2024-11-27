@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class RCRCompressionManager : MonoBehaviour
 {
     [SerializeField] TMP_Text m_compressionStatusText, m_compressionBPMText, m_compressionNValidText;
+    [SerializeField] RectTransform m_arrowBPM;
 
     bool m_compressionReachedValidDepth, m_compressionTooDeep, m_ongoingCompression;
 
@@ -13,6 +15,8 @@ public class RCRCompressionManager : MonoBehaviour
     List<float> m_compressionTimes;
     int m_compressionBPM;
     int m_nValidCompressions;
+    Quaternion m_initialArrowBPMRotation;
+    float BPMToDegree = 180 / 220;
 
     [SerializeField] Transform m_handTransform, m_chestTransform;
     [SerializeField] float m_maxChestOffset = 0.01f;
@@ -34,6 +38,7 @@ public class RCRCompressionManager : MonoBehaviour
     {
         m_compressionReachedValidDepth = false;
         m_compressionTooDeep = false;
+        m_initialArrowBPMRotation = m_arrowBPM.rotation;
 
         m_timer = 0.0f;
         m_timerBetweenCompressions = 0.0f;
@@ -82,12 +87,12 @@ public class RCRCompressionManager : MonoBehaviour
 
             if (m_compressionTimes.Count == 2) {
                 // 1 compression/deltaT s * 60s/min => compression/min
-                m_compressionBPM = (int) (60.0f / (m_compressionTimes[1] - m_compressionTimes[0]));
+                int bpm = (int) (60.0f / (m_compressionTimes[1] - m_compressionTimes[0]));
 
                 m_timer = 0;
                 m_compressionTimes.Clear();
 
-                m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
+                SetBPM(bpm);
             }
 
             m_compressionReachedValidDepth = false;
@@ -127,13 +132,18 @@ public class RCRCompressionManager : MonoBehaviour
         if (!m_ongoingCompression) {
             m_timerBetweenCompressions += Time.deltaTime;
 
-            if (m_timerBetweenCompressions > 4.0f) {
+            if (m_timerBetweenCompressions > 2.0f) {
                 m_compressionTimes.Clear();
-                m_compressionBPM = 0;
-                m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
+                SetBPM(0);
             }
         } else {
             m_timerBetweenCompressions = 0.0f;
         }
+    }
+
+    private void SetBPM(int bpm) {
+        m_compressionBPM = bpm;
+        m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
+        m_arrowBPM.rotation = m_initialArrowBPMRotation * Quaternion.Euler(0, 0, BPMToDegree * math.clamp(m_compressionBPM, 0, 220));
     }
 }
