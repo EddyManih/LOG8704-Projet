@@ -3744,8 +3744,7 @@ MonoBehaviour:
     m_stateAudioClip: {fileID: 8300000, guid: 2ab7d53291b05486d83d998f649319f2, type: 3}
   - m_stateGameObjects:
     - {fileID: 1785223034}
-    m_stateUiInstructions:
-    - {fileID: 0}
+    m_stateUiInstructions: []
     m_stateAudioClip: {fileID: 8300000, guid: 650a66c1ac6324ecfb3470e7bd613729, type: 3}
   options: {fileID: 11400000, guid: c36c31486b11a524ba3c4479311b93a9, type: 2}
 --- !u!82 &1260632442
@@ -6675,7 +6674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2142970914
 Transform:
   m_ObjectHideFlags: 0
