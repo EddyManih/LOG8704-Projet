@@ -16,7 +16,7 @@ public class RCRCompressionManager : MonoBehaviour
     int m_compressionBPM;
     int m_nValidCompressions;
     Quaternion m_initialArrowBPMRotation;
-    float BPMToDegree = 180 / 220;
+    float BPMToDegree = ((float) 180)/ 220;
 
     [SerializeField] Transform m_handTransform, m_chestTransform;
     [SerializeField] float m_maxChestOffset = 0.01f;
@@ -144,6 +144,6 @@ public class RCRCompressionManager : MonoBehaviour
     private void SetBPM(int bpm) {
         m_compressionBPM = bpm;
         m_compressionBPMText.text = "BPM: " + m_compressionBPM.ToString();
-        m_arrowBPM.rotation = m_initialArrowBPMRotation * Quaternion.Euler(0, 0, BPMToDegree * math.clamp(m_compressionBPM, 0, 220));
+        m_arrowBPM.rotation = m_initialArrowBPMRotation * Quaternion.Euler(0, 0, -BPMToDegree * math.clamp(m_compressionBPM, 0, 220));
     }
 }
